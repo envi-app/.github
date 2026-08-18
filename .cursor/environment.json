@@ -1,0 +1,32 @@
+{
+  "name": "envi platform (workspace)",
+  "install": "bash .cursor/install.sh",
+  "start": "bash .cursor/start.sh",
+  "terminals": [
+    {
+      "name": "landing (astro :3030)",
+      "command": "source ~/.envi-workspace-env 2>/dev/null; cd \"${ENVI_REPOS_ROOT:-/agent/repos}/envi-frontend-landing-page\" && npm run dev"
+    },
+    {
+      "name": "marketplace (next :3000)",
+      "command": "source ~/.envi-workspace-env 2>/dev/null; cd \"${ENVI_REPOS_ROOT:-/agent/repos}/envi-frontend-marketplace\" && npm run dev"
+    },
+    {
+      "name": "wms (react-router :5173)",
+      "command": "source ~/.envi-workspace-env 2>/dev/null; cd \"${ENVI_REPOS_ROOT:-/agent/repos}/envi-wms\" && set -a && . ./.env && set +a && npm run dev -- --port 5173"
+    }
+  ],
+  "repositoryDependencies": [
+    "github.com/envi-app/envi-backend-analytics",
+    "github.com/envi-app/envi-backend-mono",
+    "github.com/envi-app/envi-backend-notifications",
+    "github.com/envi-app/envi-backend-products",
+    "github.com/envi-app/envi-backend-transactions",
+    "github.com/envi-app/envi-backoffice",
+    "github.com/envi-app/envi-delivery-zone-hub",
+    "github.com/envi-app/envi-frontend-landing-page",
+    "github.com/envi-app/envi-frontend-marketplace",
+    "github.com/envi-app/envi-frontend-mobile",
+    "github.com/envi-app/envi-wms"
+  ]
+}
